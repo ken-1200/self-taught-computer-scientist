@@ -67,6 +67,28 @@ alphabet_list = [
 print(binary_search(alphabet_list, "actor"))
 
 
+def binary_search_ex(a_list, c):
+    """模範解答"""
+    first = 0
+    last = len(a_list) - 1
+    target_code = ord(c)
+    while last >= first:
+        mid = (first + last) // 2
+        if a_list[mid] == c:
+            return True
+        else:
+            if target_code > ord(a_list[mid]):
+                first = mid + 1
+            else:
+                last = mid - 1
+
+    return False
+
+
+print(binary_search(["a", "b", "c", "d"], "b"))
+
+
+# --- 書籍の内容 ---
 def binary_search_example(a_list: list[int], n: int):
     """二分探索"""
     first = 0
